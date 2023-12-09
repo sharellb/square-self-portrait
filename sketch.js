@@ -1,11 +1,11 @@
 /* ICM 2023 Homework 1 Self-Portrait */
 
 // Grid width and length (restrict to a square)
-const gridSize =  500;
+const gridSize =  1000;
 // Number of squares per row and column 
 const gridCount = 10;
 // Calculated width and length of each square
-const squareSize = gridSize/gridCount;
+let squareSize;
 
 // Skin color values captured using Digital Color Meter from HEIC image captured on an iPhone and airdropped to a laptop
 // inspired by ICM class 1 activity led by Ellen Nickles
@@ -23,8 +23,11 @@ const skinColors = [
 ]
 
 function setup() {
-  createCanvas(gridSize, gridSize);
+  createCanvas(windowWidth, windowHeight);
   frameRate(10); // Slow down speed of change
+
+  // Calculated width and length of each square
+  squareSize = windowWidth/gridCount;
 }
 
 function draw() {
